@@ -6,10 +6,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.arnaud.ludovic.moodtracker.controller.MoodFragment;
 
-/**
- * Created by Ludo on 30/03/2018.
- */
-
 public class PageAdapter extends FragmentPagerAdapter {
 
     //Array of colors that will be passed to MoodFragment
@@ -19,7 +15,7 @@ public class PageAdapter extends FragmentPagerAdapter {
     private int[] moods;
 
     //Default constructor
-    public PageAdapter(FragmentManager mgr, int[] colors, int[] moods){
+    protected PageAdapter(FragmentManager mgr, int[] colors, int[] moods){
         super(mgr);
         this.colors = colors;
         this.moods = moods;

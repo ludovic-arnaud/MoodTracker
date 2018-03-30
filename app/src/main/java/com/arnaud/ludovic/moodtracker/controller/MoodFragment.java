@@ -38,6 +38,7 @@ public class MoodFragment extends Fragment {
         args.putInt(KEY_COLOR, color);
         args.putInt(KEY_MOOD, mood);
 
+        fragment.setArguments(args);
         return (fragment);
     }
 
