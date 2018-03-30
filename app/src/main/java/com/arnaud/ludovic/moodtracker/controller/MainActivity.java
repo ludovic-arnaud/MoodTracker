@@ -1,11 +1,12 @@
 package com.arnaud.ludovic.moodtracker.controller;
 
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.arnaud.ludovic.moodtracker.R;
 import com.arnaud.ludovic.moodtracker.adapters.PageAdapter;
+
+import fr.castorflex.android.verticalviewpager.VerticalViewPager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         final int[] moods = {R.drawable.smiley_sad, R.drawable.smiley_disappointed, R.drawable.smiley_normal, R.drawable.smiley_happy, R.drawable.smiley_super_happy};
 
         //Get ViewPages from Layout
-        ViewPager pager = findViewById(R.id.activity_main_viewpager);
+        VerticalViewPager pager = findViewById(R.id.activity_main_viewpager);
         //Set adapter PageAdapter and glue it together
         pager.setAdapter(new PageAdapter(
                 getSupportFragmentManager(),
