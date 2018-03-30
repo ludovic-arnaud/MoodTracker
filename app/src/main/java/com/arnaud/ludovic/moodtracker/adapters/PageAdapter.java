@@ -19,7 +19,7 @@ public class PageAdapter extends FragmentPagerAdapter {
     private int[] moods;
 
     //Default constructor
-    public PageAdapter(FragmentManager mgr, int[] colors){
+    public PageAdapter(FragmentManager mgr, int[] colors, int[] moods){
         super(mgr);
         this.colors = colors;
         this.moods = moods;
@@ -27,7 +27,8 @@ public class PageAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 5; //Number of pages to show
+        return 5;
+        //Number of pages to show
     }
 
     @Override
