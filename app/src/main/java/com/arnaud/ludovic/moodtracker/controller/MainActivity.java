@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void configureViewPager(){
         //Array of moods
-        final int[] moods = {R.drawable.smiley_disappointed, R.drawable.smiley_happy, R.drawable.smiley_normal, R.drawable.smiley_sad, R.drawable.smiley_super_happy};
+        final int[] moods = {R.drawable.smiley_sad, R.drawable.smiley_disappointed, R.drawable.smiley_normal, R.drawable.smiley_happy, R.drawable.smiley_super_happy};
 
         //Get ViewPages from Layout
         ViewPager pager = (ViewPager) findViewById(R.id.activity_main_viewpager);
