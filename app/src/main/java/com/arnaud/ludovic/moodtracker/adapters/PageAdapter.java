@@ -19,7 +19,7 @@ public class PageAdapter extends FragmentPagerAdapter {
     private int[] moods;
 
     //Default constructor
-    public PageAdapter(FragmentManager mgr, int[] colors, int[] moods){
+    public PageAdapter(FragmentManager mgr, int[] colors){
         super(mgr);
         this.colors = colors;
         this.moods = moods;
