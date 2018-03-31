@@ -3,4 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/dialog_comment_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Please type your comment here"
+        android:padding="20dp"
+        />
+
 </LinearLayout>
