@@ -26,46 +26,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Configure ViewPager
-        this.configureViewPager();
-
         //Set buttons
         mCommentButton = (ImageButton) findViewById(R.id.activity_main_comment_btn);
         mHistoryButton = (ImageButton) findViewById(R.id.activity_main_history_btn);
 
-        //Configure alert dialog for comment button
-        mCommentButton.setOnClickListener(new View.OnClickListener() {
+        //Configure ViewPager
+        this.configureViewPager();
 
-            @Override
-            public void onClick(View view) {
-                //Comment popup
-                AlertDialog.Builder builder;
-                builder = new AlertDialog.Builder(MainActivity.this);
-                // Get the layout inflater
-                LayoutInflater inflater = getLayoutInflater();
-                //Add Title
-                builder.setTitle("Add a comment")
-                        // Inflate and set the layout for the dialog
-                        // Pass null as the parent view because its going in the dialog layout
-                        .setView(inflater.inflate(R.layout.dialog_comment, null))
-                        // Add action buttons
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                EditText mCommentEdit = findViewById(R.id.dialog_comment_edit);
-                                SharedPrefTools.setPrefKeyComment(MainActivity.this, mCommentEdit.getText().toString());
-                                dialogInterface.dismiss();
-                            }
-                        })
-                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                            }
-                        })
-                        .create()
-                        .show();
-            }
-        });
+        //Show Comment Popup
+        this.showCommentPopup();
+
     }
 
     private void configureViewPager(){
@@ -78,6 +48,43 @@ public class MainActivity extends AppCompatActivity {
         pager.setAdapter(new PageAdapter(
                 getSupportFragmentManager(),
                 getResources().getIntArray(R.array.colorPagesViewPager), moods) {
+        });
+    }
+
+    private void showCommentPopup(){
+        //Configure alert dialog for comment button
+        mCommentButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                //Comment popup
+                AlertDialog.Builder builder;
+                builder = new AlertDialog.Builder(MainActivity.this);
+                // Get the layout inflater
+                LayoutInflater inflater = getLayoutInflater();
+                final View v = inflater.inflate(R.layout.dialog_comment, null);
+                //Add Title
+                builder.setTitle("Add a comment")
+                        // Inflate and set the layout for the dialog
+                        // Pass null as the parent view because its going in the dialog layout
+                        .setView(v)
+                        // Add action buttons
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                EditText mCommentEdit = v.findViewById(R.id.dialog_comment_edit);
+                                SharedPrefTools.setPrefKeyComment(MainActivity.this, mCommentEdit.getText().toString());
+                                dialogInterface.dismiss();
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                            }
+                        })
+                        .create()
+                        .show();
+            }
         });
     }
 }
