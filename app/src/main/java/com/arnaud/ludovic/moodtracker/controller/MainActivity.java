@@ -1,7 +1,6 @@
 package com.arnaud.ludovic.moodtracker.controller;
 
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +11,7 @@ import android.widget.ImageButton;
 
 import com.arnaud.ludovic.moodtracker.R;
 import com.arnaud.ludovic.moodtracker.adapters.PageAdapter;
-import com.arnaud.ludovic.moodtracker.model.Comments;
+import com.arnaud.ludovic.moodtracker.model.SharedPrefTools;
 
 import fr.castorflex.android.verticalviewpager.VerticalViewPager;
 
@@ -21,16 +20,6 @@ public class MainActivity extends AppCompatActivity {
     //Buttons variables
     private ImageButton mCommentButton;
     private ImageButton mHistoryButton;
-
-    //New comment attribute
-    private Comments mComments;
-
-    //Calling SharedPreferences
-    private SharedPreferences mPreferences;
-
-    //Key comment in SharedPreferences
-    public static final String PREF_KEY_COMMENT = "PREF_KEY_COMMENT";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,15 +33,14 @@ public class MainActivity extends AppCompatActivity {
         mCommentButton = (ImageButton) findViewById(R.id.activity_main_comment_btn);
         mHistoryButton = (ImageButton) findViewById(R.id.activity_main_history_btn);
 
-        mPreferences = getPreferences(MODE_PRIVATE);
-
         //Configure alert dialog for comment button
         mCommentButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 //Comment popup
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                AlertDialog.Builder builder;
+                builder = new AlertDialog.Builder(MainActivity.this);
                 // Get the layout inflater
                 LayoutInflater inflater = getLayoutInflater();
                 //Add Title
@@ -65,9 +53,8 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 EditText mCommentEdit = findViewById(R.id.dialog_comment_edit);
-                                String comment = mCommentEdit.getText().toString();
-                                mComments.setComments(comment);
-                                mPreferences.edit().putString(PREF_KEY_COMMENT, mComments.getComments()).apply();
+                                SharedPrefTools.setPrefKeyComment(MainActivity.this, mCommentEdit.getText().toString());
+                                dialogInterface.dismiss();
                             }
                         })
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
