@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
         //Set adapter PageAdapter and glue it together
         pager.setAdapter(new PageAdapter(
                 getSupportFragmentManager(),
-                getResources().getIntArray(R.array.colorPagesViewPager), moods) {
+                getResources().getIntArray(R.array.colorPagesViewPager), moods)
+                {
         });
     }
 
