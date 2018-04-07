@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 
+import com.arnaud.ludovic.moodtracker.controller.MoodFragment;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 

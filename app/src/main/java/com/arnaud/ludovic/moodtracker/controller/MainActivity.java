@@ -1,6 +1,8 @@
 package com.arnaud.ludovic.moodtracker.controller;
 
 import android.content.DialogInterface;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton mCommentButton;
     private ImageButton mHistoryButton;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
         //Show Comment Popup
         this.showCommentPopup();
 
+
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void configureViewPager(){
         //Array of moods
         final int[] moods = {R.drawable.smiley_sad, R.drawable.smiley_disappointed, R.drawable.smiley_normal, R.drawable.smiley_happy, R.drawable.smiley_super_happy};
@@ -50,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 getResources().getIntArray(R.array.colorPagesViewPager), moods)
                 {
         });
+        SharedPrefTools.setPrefKeyMood(MainActivity.this, pager.getCurrentItem());
     }
 
     private void showCommentPopup(){
@@ -71,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                         .setView(v)
                         // Add action buttons
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @RequiresApi(api = Build.VERSION_CODES.O)
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 EditText mCommentEdit = v.findViewById(R.id.dialog_comment_edit);

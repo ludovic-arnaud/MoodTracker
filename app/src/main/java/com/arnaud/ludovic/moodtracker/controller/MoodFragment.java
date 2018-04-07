@@ -1,7 +1,10 @@
 package com.arnaud.ludovic.moodtracker.controller;
 
 
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.arnaud.ludovic.moodtracker.R;
+import com.arnaud.ludovic.moodtracker.model.SharedPrefTools;
 
 
 /**
@@ -42,6 +46,7 @@ public class MoodFragment extends Fragment {
         return (fragment);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -60,6 +65,7 @@ public class MoodFragment extends Fragment {
         //Update widget with it
         rootView.setBackgroundColor(color);
         imageView.setImageResource(mood);
+
 
         return result;
     }
