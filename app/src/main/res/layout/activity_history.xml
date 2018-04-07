@@ -1,6 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <FrameLayout
+        android:id="@+id/activity_history_mon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A week ago" />
+
+        <ImageButton
+            android:id="@+id/activity_history_btn_mon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:src="@drawable/ic_comment_black_48px"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="10dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/activity_history_tue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Six days ago"/>
+
+        <ImageButton
+            android:id="@+id/activity_history_btn_tue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:src="@drawable/ic_comment_black_48px"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="10dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/activity_history_wed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Five days ago"/>
+
+        <ImageButton
+            android:id="@+id/activity_history_btn_wed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:src="@drawable/ic_comment_black_48px"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="10dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/activity_history_thu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Four days ago"/>
+
+        <ImageButton
+            android:id="@+id/activity_history_btn_thu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:src="@drawable/ic_comment_black_48px"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="10dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/activity_history_fri"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Three days ago"/>
+
+        <ImageButton
+            android:id="@+id/activity_history_btn_fri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:src="@drawable/ic_comment_black_48px"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="10dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/activity_history_sat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Two days ago"/>
+
+        <ImageButton
+            android:id="@+id/activity_history_btn_sat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:src="@drawable/ic_comment_black_48px"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="10dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/activity_history_sun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yesterday"/>
+
+        <ImageButton
+            android:id="@+id/activity_history_btn_sun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:src="@drawable/ic_comment_black_48px"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="10dp"/>
+
+    </FrameLayout>
+
+</LinearLayout>
