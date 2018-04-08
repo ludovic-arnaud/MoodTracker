@@ -45,6 +45,5 @@ public class HistoryActivity extends AppCompatActivity {
         mButtonFri = findViewById(R.id.activity_history_btn_fri);
         mButtonSat = findViewById(R.id.activity_history_btn_sat);
         mButtonSun = findViewById(R.id.activity_history_btn_sun);
-
     }
 }

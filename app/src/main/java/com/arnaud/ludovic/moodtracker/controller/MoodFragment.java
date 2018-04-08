@@ -1,7 +1,5 @@
 package com.arnaud.ludovic.moodtracker.controller;
 
-
-import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -13,8 +11,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.arnaud.ludovic.moodtracker.R;
-import com.arnaud.ludovic.moodtracker.model.SharedPrefTools;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,7 +61,6 @@ public class MoodFragment extends Fragment {
         //Update widget with it
         rootView.setBackgroundColor(color);
         imageView.setImageResource(mood);
-
 
         return result;
     }

@@ -2,8 +2,6 @@ package com.arnaud.ludovic.moodtracker.controller;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
     VerticalViewPager pager;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         this.openHistory();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void configureViewPager(){
         //Array of moods
         final int[] moods = {R.drawable.smiley_sad, R.drawable.smiley_disappointed, R.drawable.smiley_normal, R.drawable.smiley_happy, R.drawable.smiley_super_happy};
@@ -82,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
                         .setView(v)
                         // Add action buttons
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            @RequiresApi(api = Build.VERSION_CODES.O)
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 EditText mCommentEdit = v.findViewById(R.id.dialog_comment_edit);
@@ -102,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -119,5 +113,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(historyActivity);
             }
         });
+        SharedPrefTools.setPrefKeyMood(MainActivity.this, pager.getCurrentItem());
     }
 }
