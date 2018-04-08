@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
                 getResources().getIntArray(R.array.colorPagesViewPager), moods)
                 {
         });
+        //Set default mood
+        pager.setCurrentItem(3);
     }
 
     private void showCommentPopup(){
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 EditText mCommentEdit = v.findViewById(R.id.dialog_comment_edit);
+                                //Save comment in SharedPreferences when OK button is clicked
                                 SharedPrefTools.setPrefKeyComment(MainActivity.this, mCommentEdit.getText().toString());
                                 dialogInterface.dismiss();
                             }
@@ -99,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        //Save chosen mood in SharedPreferences when back button is clicked
         SharedPrefTools.setPrefKeyMood(MainActivity.this, pager.getCurrentItem());
     }
 }
