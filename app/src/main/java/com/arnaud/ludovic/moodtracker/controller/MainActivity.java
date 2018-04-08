@@ -1,8 +1,10 @@
 package com.arnaud.ludovic.moodtracker.controller;
 
+import android.annotation.TargetApi;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,8 +17,12 @@ import com.arnaud.ludovic.moodtracker.R;
 import com.arnaud.ludovic.moodtracker.adapters.PageAdapter;
 import com.arnaud.ludovic.moodtracker.model.SharedPrefTools;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+
 import fr.castorflex.android.verticalviewpager.VerticalViewPager;
 
+@TargetApi(Build.VERSION_CODES.O)
 public class MainActivity extends AppCompatActivity {
 
     //Buttons variables
@@ -26,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
     VerticalViewPager pager;
 
     private SharedPreferences mPreferences;
+
+    //Getting the date of the week for the current day
+    LocalDate mDate = LocalDate.now();
+    DayOfWeek mDayOfWeek = mDate.getDayOfWeek();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 EditText mCommentEdit = v.findViewById(R.id.dialog_comment_edit);
                                 //Save comment in SharedPreferences when OK button is clicked
-                                SharedPrefTools.setPrefKeyComment(mPreferences, 0,mCommentEdit.getText().toString());
+                                SharedPrefTools.setPrefKeyComment(mPreferences, mDayOfWeek, mCommentEdit.getText().toString());
                                 dialogInterface.dismiss();
                             }
                         })
@@ -106,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         //Save chosen mood in SharedPreferences when back button is clicked
-        SharedPrefTools.setPrefKeyMood(mPreferences, 0, pager.getCurrentItem());
+        SharedPrefTools.setPrefKeyMood(mPreferences, mDayOfWeek, pager.getCurrentItem());
 
     }
 
@@ -119,6 +129,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(historyActivity);
             }
         });
-
+        SharedPrefTools.setPrefKeyMood(mPreferences, mDayOfWeek, pager.getCurrentItem());
     }
 }

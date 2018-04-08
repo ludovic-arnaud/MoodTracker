@@ -1,11 +1,17 @@
 package com.arnaud.ludovic.moodtracker.controller;
 
+import android.annotation.TargetApi;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
 import com.arnaud.ludovic.moodtracker.R;
+import com.arnaud.ludovic.moodtracker.model.SharedPrefTools;
+
+import java.time.DayOfWeek;
 
 public class HistoryActivity extends AppCompatActivity {
 
@@ -24,7 +30,9 @@ public class HistoryActivity extends AppCompatActivity {
     private ImageButton mButtonSat;
     private ImageButton mButtonSun;
 
+    private SharedPreferences mPreferences;
 
+    @TargetApi(Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,5 +53,51 @@ public class HistoryActivity extends AppCompatActivity {
         mButtonFri = findViewById(R.id.activity_history_btn_fri);
         mButtonSat = findViewById(R.id.activity_history_btn_sat);
         mButtonSun = findViewById(R.id.activity_history_btn_sun);
+
+        FrameLayout[] frameArray = {
+                mFrameMon,
+                mFrameTue,
+                mFrameWed,
+                mFrameThu,
+                mFrameFri,
+                mFrameSat,
+                mFrameSun
+        };
+
+        int [] moods = {
+                SharedPrefTools.getPrefKeyMood(mPreferences, DayOfWeek.MONDAY),
+                SharedPrefTools.getPrefKeyMood(mPreferences, DayOfWeek.TUESDAY),
+                SharedPrefTools.getPrefKeyMood(mPreferences, DayOfWeek.WEDNESDAY),
+                SharedPrefTools.getPrefKeyMood(mPreferences, DayOfWeek.THURSDAY),
+                SharedPrefTools.getPrefKeyMood(mPreferences, DayOfWeek.FRIDAY),
+                SharedPrefTools.getPrefKeyMood(mPreferences, DayOfWeek.SATURDAY),
+                SharedPrefTools.getPrefKeyMood(mPreferences, DayOfWeek.SUNDAY),
+        };
+
+        for (int i = 0; i < 8; i++){
+            updateFrame(frameArray[i], moods[i]);
+        }
+
     }
+
+    private void updateFrame(FrameLayout mFrameLayout, int mood){
+        switch (mood){
+            case 0:
+                mFrameLayout.setBackgroundColor(getResources().getIntArray(R.array.colorPagesViewPager)[0]);
+                break;
+            case 1:
+                mFrameLayout.setBackgroundColor(getResources().getIntArray(R.array.colorPagesViewPager)[1]);
+                break;
+            case 2:
+                mFrameLayout.setBackgroundColor(getResources().getIntArray(R.array.colorPagesViewPager)[2]);
+                break;
+            case 3:
+                mFrameLayout.setBackgroundColor(getResources().getIntArray(R.array.colorPagesViewPager)[3]);
+                break;
+            case 4:
+                mFrameLayout.setBackgroundColor(getResources().getIntArray(R.array.colorPagesViewPager)[4]);
+                break;
+        }
+    }
+
 }
