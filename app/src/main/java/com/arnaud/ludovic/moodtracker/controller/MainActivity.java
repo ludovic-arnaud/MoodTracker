@@ -1,6 +1,7 @@
 package com.arnaud.ludovic.moodtracker.controller;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
@@ -40,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Show Comment Popup
         this.showCommentPopup();
+
+        //Open History
+        this.openHistory();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -104,5 +108,16 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         //Save chosen mood in SharedPreferences when back button is clicked
         SharedPrefTools.setPrefKeyMood(MainActivity.this, pager.getCurrentItem());
+    }
+
+    //Open HistoryActivity
+    private void openHistory(){
+        mHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent historyActivity = new Intent(MainActivity.this, HistoryActivity.class);
+                startActivity(historyActivity);
+            }
+        });
     }
 }
