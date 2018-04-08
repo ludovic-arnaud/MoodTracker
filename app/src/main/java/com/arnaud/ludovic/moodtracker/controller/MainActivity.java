@@ -2,6 +2,7 @@ package com.arnaud.ludovic.moodtracker.controller;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,10 +25,14 @@ public class MainActivity extends AppCompatActivity {
 
     VerticalViewPager pager;
 
+    private SharedPreferences mPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mPreferences = getPreferences(MODE_PRIVATE);
 
         //Set buttons
         mCommentButton = (ImageButton) findViewById(R.id.activity_main_comment_btn);
@@ -82,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 EditText mCommentEdit = v.findViewById(R.id.dialog_comment_edit);
                                 //Save comment in SharedPreferences when OK button is clicked
-                                SharedPrefTools.setPrefKeyComment(MainActivity.this, mCommentEdit.getText().toString());
+                                SharedPrefTools.setPrefKeyComment(mPreferences, 0,mCommentEdit.getText().toString());
                                 dialogInterface.dismiss();
                             }
                         })
@@ -101,7 +106,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         //Save chosen mood in SharedPreferences when back button is clicked
-        SharedPrefTools.setPrefKeyMood(MainActivity.this, pager.getCurrentItem());
+        SharedPrefTools.setPrefKeyMood(mPreferences, 0, pager.getCurrentItem());
+
     }
 
     //Open HistoryActivity
@@ -113,6 +119,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(historyActivity);
             }
         });
-        SharedPrefTools.setPrefKeyMood(MainActivity.this, pager.getCurrentItem());
+
     }
 }
