@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton mCommentButton;
     private ImageButton mHistoryButton;
 
+    VerticalViewPager pager;
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Show Comment Popup
         this.showCommentPopup();
-
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -48,14 +48,13 @@ public class MainActivity extends AppCompatActivity {
         final int[] moods = {R.drawable.smiley_sad, R.drawable.smiley_disappointed, R.drawable.smiley_normal, R.drawable.smiley_happy, R.drawable.smiley_super_happy};
 
         //Get ViewPages from Layout
-        VerticalViewPager pager = findViewById(R.id.activity_main_viewpager);
+        pager = findViewById(R.id.activity_main_viewpager);
         //Set adapter PageAdapter and glue it together
         pager.setAdapter(new PageAdapter(
                 getSupportFragmentManager(),
                 getResources().getIntArray(R.array.colorPagesViewPager), moods)
                 {
         });
-        SharedPrefTools.setPrefKeyMood(MainActivity.this, pager.getCurrentItem());
     }
 
     private void showCommentPopup(){
@@ -94,5 +93,12 @@ public class MainActivity extends AppCompatActivity {
                         .show();
             }
         });
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SharedPrefTools.setPrefKeyMood(MainActivity.this, pager.getCurrentItem());
     }
 }
