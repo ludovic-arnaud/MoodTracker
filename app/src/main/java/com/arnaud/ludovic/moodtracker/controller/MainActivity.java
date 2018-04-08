@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 EditText mCommentEdit = v.findViewById(R.id.dialog_comment_edit);
                                 //Save comment in SharedPreferences when OK button is clicked
-                                SharedPrefTools.setPrefKeyComment(mPreferences, mDayOfWeek, mCommentEdit.getText().toString());
+                                SharedPrefTools.setPrefKeyComment(MainActivity.this, mDayOfWeek, mCommentEdit.getText().toString());
                                 dialogInterface.dismiss();
                             }
                         })
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         //Save chosen mood in SharedPreferences when back button is clicked
-        SharedPrefTools.setPrefKeyMood(mPreferences, mDayOfWeek, pager.getCurrentItem());
+        SharedPrefTools.setPrefKeyMood(MainActivity.this, mDayOfWeek, pager.getCurrentItem());
 
     }
 
@@ -129,6 +129,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(historyActivity);
             }
         });
-        SharedPrefTools.setPrefKeyMood(mPreferences, mDayOfWeek, pager.getCurrentItem());
     }
 }

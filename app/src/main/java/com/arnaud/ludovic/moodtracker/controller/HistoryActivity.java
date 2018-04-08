@@ -65,16 +65,16 @@ public class HistoryActivity extends AppCompatActivity {
         };
 
         int [] moods = {
-                SharedPrefTools.getPrefKeyMood(mPreferences, DayOfWeek.MONDAY),
-                SharedPrefTools.getPrefKeyMood(mPreferences, DayOfWeek.TUESDAY),
-                SharedPrefTools.getPrefKeyMood(mPreferences, DayOfWeek.WEDNESDAY),
-                SharedPrefTools.getPrefKeyMood(mPreferences, DayOfWeek.THURSDAY),
-                SharedPrefTools.getPrefKeyMood(mPreferences, DayOfWeek.FRIDAY),
-                SharedPrefTools.getPrefKeyMood(mPreferences, DayOfWeek.SATURDAY),
-                SharedPrefTools.getPrefKeyMood(mPreferences, DayOfWeek.SUNDAY),
+                SharedPrefTools.getPrefKeyMood(HistoryActivity.this, DayOfWeek.MONDAY),
+                SharedPrefTools.getPrefKeyMood(HistoryActivity.this, DayOfWeek.TUESDAY),
+                SharedPrefTools.getPrefKeyMood(HistoryActivity.this, DayOfWeek.WEDNESDAY),
+                SharedPrefTools.getPrefKeyMood(HistoryActivity.this, DayOfWeek.THURSDAY),
+                SharedPrefTools.getPrefKeyMood(HistoryActivity.this, DayOfWeek.FRIDAY),
+                SharedPrefTools.getPrefKeyMood(HistoryActivity.this, DayOfWeek.SATURDAY),
+                SharedPrefTools.getPrefKeyMood(HistoryActivity.this, DayOfWeek.SUNDAY),
         };
 
-        for (int i = 0; i < 8; i++){
+        for (int i = 0; i < 7; i++){
             updateFrame(frameArray[i], moods[i]);
         }
 
