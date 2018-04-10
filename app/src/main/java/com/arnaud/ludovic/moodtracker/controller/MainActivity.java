@@ -69,8 +69,15 @@ public class MainActivity extends AppCompatActivity {
                 getResources().getIntArray(R.array.colorPagesViewPager), moods)
                 {
         });
-        //Set default mood happy
-        pager.setCurrentItem(3);
+        //Set default mood
+        //If no mood in SharedPreferences for today set mood to happy
+        if (SharedPrefTools.getPrefKeyMood(MainActivity.this, mDate) == 6){
+            pager.setCurrentItem(3);
+        } else {
+            //If SharedPreferences contains a mood for today set this mood
+            pager.setCurrentItem(SharedPrefTools.getPrefKeyMood(MainActivity.this, mDate));
+        }
+
     }
 
     private void showCommentPopup(){
