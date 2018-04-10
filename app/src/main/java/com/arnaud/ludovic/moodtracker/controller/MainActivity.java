@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     //Buttons variables
     private ImageButton mCommentButton;
     private ImageButton mHistoryButton;
+    private ImageButton mShareButton;
 
     //Set VerticalViewpager
     VerticalViewPager pager;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         //Set buttons
         mCommentButton = findViewById(R.id.activity_main_comment_btn);
         mHistoryButton = findViewById(R.id.activity_main_history_btn);
+        mShareButton = findViewById(R.id.activity_main_share_btn);
 
         //Configure ViewPager
         this.configureViewPager();

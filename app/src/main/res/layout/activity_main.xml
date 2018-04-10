@@ -23,6 +23,7 @@
         android:layout_margin="20dp"/>
 
     <ImageButton
+        android:id="@+id/activity_main_share_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_share_black_48dp"
