@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <FrameLayout
-        android:id="@+id/activity_history_mon"
+        android:id="@+id/activity_history_seven"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -18,7 +18,7 @@
             android:text="A week ago" />
 
         <ImageButton
-            android:id="@+id/activity_history_btn_mon"
+            android:id="@+id/activity_history_btn_seven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
@@ -29,7 +29,7 @@
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/activity_history_tue"
+        android:id="@+id/activity_history_six"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -41,7 +41,7 @@
             android:text="Six days ago"/>
 
         <ImageButton
-            android:id="@+id/activity_history_btn_tue"
+            android:id="@+id/activity_history_btn_six"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
@@ -52,7 +52,7 @@
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/activity_history_wed"
+        android:id="@+id/activity_history_five"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -64,7 +64,7 @@
             android:text="Five days ago"/>
 
         <ImageButton
-            android:id="@+id/activity_history_btn_wed"
+            android:id="@+id/activity_history_btn_five"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
@@ -75,7 +75,7 @@
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/activity_history_thu"
+        android:id="@+id/activity_history_foor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -87,7 +87,7 @@
             android:text="Four days ago"/>
 
         <ImageButton
-            android:id="@+id/activity_history_btn_thu"
+            android:id="@+id/activity_history_btn_foor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
@@ -98,7 +98,7 @@
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/activity_history_fri"
+        android:id="@+id/activity_history_three"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -110,7 +110,7 @@
             android:text="Three days ago"/>
 
         <ImageButton
-            android:id="@+id/activity_history_btn_fri"
+            android:id="@+id/activity_history_btn_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
@@ -121,7 +121,7 @@
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/activity_history_sat"
+        android:id="@+id/activity_history_two"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -133,7 +133,7 @@
             android:text="Two days ago"/>
 
         <ImageButton
-            android:id="@+id/activity_history_btn_sat"
+            android:id="@+id/activity_history_btn_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
@@ -144,7 +144,7 @@
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/activity_history_sun"
+        android:id="@+id/activity_history_yest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -156,7 +156,7 @@
             android:text="Yesterday"/>
 
         <ImageButton
-            android:id="@+id/activity_history_btn_sun"
+            android:id="@+id/activity_history_btn_yest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"

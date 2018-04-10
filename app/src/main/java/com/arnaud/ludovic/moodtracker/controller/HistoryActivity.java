@@ -19,20 +19,20 @@ import java.time.temporal.ChronoUnit;
 @TargetApi(Build.VERSION_CODES.O)
 public class HistoryActivity extends AppCompatActivity {
 
-    private FrameLayout mFrameMon;
-    private FrameLayout mFrameTue;
-    private FrameLayout mFrameWed;
-    private FrameLayout mFrameThu;
-    private FrameLayout mFrameFri;
-    private FrameLayout mFrameSat;
-    private FrameLayout mFrameSun;
-    private ImageButton mButtonMon;
-    private ImageButton mButtonTue;
-    private ImageButton mButtonWed;
-    private ImageButton mButtonThu;
-    private ImageButton mButtonFri;
-    private ImageButton mButtonSat;
-    private ImageButton mButtonSun;
+    private FrameLayout mFrameSeven;
+    private FrameLayout mFrameSix;
+    private FrameLayout mFrameFive;
+    private FrameLayout mFrameFour;
+    private FrameLayout mFrameThree;
+    private FrameLayout mFrameTwo;
+    private FrameLayout mFrameYest;
+    private ImageButton mButtonSeven;
+    private ImageButton mButtonSix;
+    private ImageButton mButtonFive;
+    private ImageButton mButtonFour;
+    private ImageButton mButtonThree;
+    private ImageButton mButtonTwo;
+    private ImageButton mButtonYest;
 
     private SharedPreferences mPreferences;
 
@@ -45,30 +45,30 @@ public class HistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-        mFrameMon = findViewById(R.id.activity_history_mon);
-        mFrameTue = findViewById(R.id.activity_history_tue);
-        mFrameWed = findViewById(R.id.activity_history_wed);
-        mFrameThu = findViewById(R.id.activity_history_thu);
-        mFrameFri = findViewById(R.id.activity_history_fri);
-        mFrameSat = findViewById(R.id.activity_history_sat);
-        mFrameSun = findViewById(R.id.activity_history_sun);
+        mFrameSeven = findViewById(R.id.activity_history_seven);
+        mFrameSix = findViewById(R.id.activity_history_six);
+        mFrameFive = findViewById(R.id.activity_history_five);
+        mFrameFour = findViewById(R.id.activity_history_foor);
+        mFrameThree = findViewById(R.id.activity_history_three);
+        mFrameTwo = findViewById(R.id.activity_history_two);
+        mFrameYest = findViewById(R.id.activity_history_yest);
 
-        mButtonMon = findViewById(R.id.activity_history_btn_mon);
-        mButtonTue = findViewById(R.id.activity_history_btn_tue);
-        mButtonWed = findViewById(R.id.activity_history_btn_wed);
-        mButtonThu = findViewById(R.id.activity_history_btn_thu);
-        mButtonFri = findViewById(R.id.activity_history_btn_fri);
-        mButtonSat = findViewById(R.id.activity_history_btn_sat);
-        mButtonSun = findViewById(R.id.activity_history_btn_sun);
+        mButtonSeven = findViewById(R.id.activity_history_btn_seven);
+        mButtonSix = findViewById(R.id.activity_history_btn_six);
+        mButtonFive = findViewById(R.id.activity_history_btn_five);
+        mButtonFour = findViewById(R.id.activity_history_btn_foor);
+        mButtonThree = findViewById(R.id.activity_history_btn_three);
+        mButtonTwo = findViewById(R.id.activity_history_btn_two);
+        mButtonYest = findViewById(R.id.activity_history_btn_yest);
 
         FrameLayout[] frameArray = {
-                mFrameMon,
-                mFrameTue,
-                mFrameWed,
-                mFrameThu,
-                mFrameFri,
-                mFrameSat,
-                mFrameSun
+                mFrameSeven,
+                mFrameSix,
+                mFrameFive,
+                mFrameFour,
+                mFrameThree,
+                mFrameTwo,
+                mFrameYest
         };
 
          int [] moods = {
