@@ -115,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         //Save chosen mood in SharedPreferences when back button is clicked
         SharedPrefTools.setPrefKeyMood(MainActivity.this, mDate, pager.getCurrentItem());
-
     }
 
     //Open HistoryActivity
