@@ -1,11 +1,10 @@
 package com.arnaud.ludovic.moodtracker.model;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Build;
 
-import java.time.DayOfWeek;
+import java.time.LocalDate;
+
 
 public class SharedPrefTools {
 
@@ -19,27 +18,27 @@ public class SharedPrefTools {
 
 
     //Set comments in SharedPreferences
-    public static void setPrefKeyComment(Context context, DayOfWeek dow, String comment){
+    public static void setPrefKeyComment(Context context, LocalDate date, String comment){
         SharedPreferences mPreferences = context.getSharedPreferences(FILE, Context.MODE_PRIVATE);
-        mPreferences.edit().putString(PREF_KEY_COM+dow, comment).apply();
+        mPreferences.edit().putString(PREF_KEY_COM+date, comment).apply();
     }
 
     //Set moods in SharedPreferences
-    public static void setPrefKeyMood(Context context, DayOfWeek dow, int mood){
+    public static void setPrefKeyMood(Context context, LocalDate date, int mood){
         SharedPreferences mPreferences = context.getSharedPreferences(FILE, Context.MODE_PRIVATE);
-        mPreferences.edit().putInt(PREF_KEY_MOOD+dow, mood).apply();
+        mPreferences.edit().putInt(PREF_KEY_MOOD+date, mood).apply();
     }
 
     //Get comments from SharedPreferences
-    public static String getPrefKeyCom(Context context, DayOfWeek dow) {
+    public static String getPrefKeyCom(Context context, LocalDate date) {
         SharedPreferences mPreferences = context.getSharedPreferences(FILE, Context.MODE_PRIVATE);
-        return mPreferences.getString(PREF_KEY_COM+dow, "");
+        return mPreferences.getString(PREF_KEY_COM+date, "");
     }
 
     //Get moods from SharedPreferences
-    public static int getPrefKeyMood(Context context, DayOfWeek dow){
+    public static int getPrefKeyMood(Context context, LocalDate date){
         SharedPreferences mPreferences = context.getSharedPreferences(FILE, Context.MODE_PRIVATE);
-        return mPreferences.getInt(PREF_KEY_MOOD+dow, 0);
+        return mPreferences.getInt(PREF_KEY_MOOD+date, 0);
     }
 
 }

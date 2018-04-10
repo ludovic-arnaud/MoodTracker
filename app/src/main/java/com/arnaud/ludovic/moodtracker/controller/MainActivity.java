@@ -17,7 +17,6 @@ import com.arnaud.ludovic.moodtracker.R;
 import com.arnaud.ludovic.moodtracker.adapters.PageAdapter;
 import com.arnaud.ludovic.moodtracker.model.SharedPrefTools;
 
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 import fr.castorflex.android.verticalviewpager.VerticalViewPager;
@@ -33,9 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     private SharedPreferences mPreferences;
 
-    //Getting the date of the week for the current day
+    //Getting the date of the current day
     LocalDate mDate = LocalDate.now();
-    DayOfWeek mDayOfWeek = mDate.getDayOfWeek();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 EditText mCommentEdit = v.findViewById(R.id.dialog_comment_edit);
                                 //Save comment in SharedPreferences when OK button is clicked
-                                SharedPrefTools.setPrefKeyComment(MainActivity.this, mDayOfWeek, mCommentEdit.getText().toString());
+                                SharedPrefTools.setPrefKeyComment(MainActivity.this, mDate, mCommentEdit.getText().toString());
                                 dialogInterface.dismiss();
                             }
                         })
@@ -116,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         //Save chosen mood in SharedPreferences when back button is clicked
-        SharedPrefTools.setPrefKeyMood(MainActivity.this, mDayOfWeek, pager.getCurrentItem());
+        SharedPrefTools.setPrefKeyMood(MainActivity.this, mDate, pager.getCurrentItem());
 
     }
 
