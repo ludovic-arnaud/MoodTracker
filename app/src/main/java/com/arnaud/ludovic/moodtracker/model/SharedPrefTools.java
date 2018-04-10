@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 
 import java.time.LocalDate;
 
-
 public class SharedPrefTools {
 
     public SharedPrefTools() {
@@ -40,5 +39,4 @@ public class SharedPrefTools {
         SharedPreferences mPreferences = context.getSharedPreferences(FILE, Context.MODE_PRIVATE);
         return mPreferences.getInt(PREF_KEY_MOOD+date, 0);
     }
-
 }

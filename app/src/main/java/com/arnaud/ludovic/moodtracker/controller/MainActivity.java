@@ -3,7 +3,6 @@ package com.arnaud.ludovic.moodtracker.controller;
 import android.annotation.TargetApi;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -28,9 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton mCommentButton;
     private ImageButton mHistoryButton;
 
+    //Set VerticalViewpager
     VerticalViewPager pager;
-
-    private SharedPreferences mPreferences;
 
     //Getting the date of the current day
     LocalDate mDate = LocalDate.now();
@@ -40,11 +38,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mPreferences = getPreferences(MODE_PRIVATE);
-
         //Set buttons
-        mCommentButton = (ImageButton) findViewById(R.id.activity_main_comment_btn);
-        mHistoryButton = (ImageButton) findViewById(R.id.activity_main_history_btn);
+        mCommentButton = findViewById(R.id.activity_main_comment_btn);
+        mHistoryButton = findViewById(R.id.activity_main_history_btn);
 
         //Configure ViewPager
         this.configureViewPager();
@@ -57,10 +53,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void configureViewPager(){
-        //Array of moods
+        //Array of moods drawables
         final int[] moods = {R.drawable.smiley_sad, R.drawable.smiley_disappointed, R.drawable.smiley_normal, R.drawable.smiley_happy, R.drawable.smiley_super_happy};
 
-        //Get ViewPages from Layout
+        //Get ViewPager from Layout
         pager = findViewById(R.id.activity_main_viewpager);
         //Set adapter PageAdapter and glue it together
         pager.setAdapter(new PageAdapter(
@@ -68,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 getResources().getIntArray(R.array.colorPagesViewPager), moods)
                 {
         });
-        //Set default mood
+        //Set default mood happy
         pager.setCurrentItem(3);
     }
 

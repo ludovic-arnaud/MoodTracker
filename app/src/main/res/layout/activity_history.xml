@@ -15,7 +15,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="A week ago" />
+            android:text="A week ago"
+            android:layout_marginLeft="10dp"/>
 
         <ImageButton
             android:id="@+id/activity_history_btn_seven"
@@ -38,7 +39,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Six days ago"/>
+            android:text="Six days ago"
+            android:layout_marginLeft="10dp"/>
 
         <ImageButton
             android:id="@+id/activity_history_btn_six"
@@ -61,7 +63,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Five days ago"/>
+            android:text="Five days ago"
+            android:layout_marginLeft="10dp"/>
 
         <ImageButton
             android:id="@+id/activity_history_btn_five"
@@ -70,7 +73,8 @@
             android:layout_gravity="right|center_vertical"
             android:src="@drawable/ic_comment_black_48px"
             android:background="@android:color/transparent"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"/>
 
     </FrameLayout>
 
@@ -84,7 +88,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Four days ago"/>
+            android:text="Four days ago"
+            android:layout_marginLeft="10dp"/>
 
         <ImageButton
             android:id="@+id/activity_history_btn_foor"
@@ -107,7 +112,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Three days ago"/>
+            android:text="Three days ago"
+            android:layout_marginLeft="10dp"/>
 
         <ImageButton
             android:id="@+id/activity_history_btn_three"
@@ -130,7 +136,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Two days ago"/>
+            android:text="Two days ago"
+            android:layout_marginLeft="10dp"/>
 
         <ImageButton
             android:id="@+id/activity_history_btn_two"
@@ -153,7 +160,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yesterday"/>
+            android:text="Yesterday"
+            android:layout_marginLeft="10dp"/>
 
         <ImageButton
             android:id="@+id/activity_history_btn_yest"
