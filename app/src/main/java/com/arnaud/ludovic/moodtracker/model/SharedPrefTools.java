@@ -37,6 +37,7 @@ public class SharedPrefTools {
     //Get moods from SharedPreferences
     public static int getPrefKeyMood(Context context, LocalDate date){
         SharedPreferences mPreferences = context.getSharedPreferences(FILE, Context.MODE_PRIVATE);
-        return mPreferences.getInt(PREF_KEY_MOOD+date, 0);
+        //If 6, nothing appears in History
+        return mPreferences.getInt(PREF_KEY_MOOD+date, 6);
     }
 }

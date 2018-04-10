@@ -18,6 +18,7 @@ import com.arnaud.ludovic.moodtracker.model.SharedPrefTools;
 
 import java.time.LocalDate;
 
+//Import castorflex (Antoine Merle) verticalviewpager
 import fr.castorflex.android.verticalviewpager.VerticalViewPager;
 
 @TargetApi(Build.VERSION_CODES.O)
@@ -52,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Open History
         this.openHistory();
+
+        this.textShare();
     }
 
     private void configureViewPager(){
@@ -122,6 +125,46 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent historyActivity = new Intent(MainActivity.this, HistoryActivity.class);
                 startActivity(historyActivity);
+            }
+        });
+    }
+
+    //Click on mShareButton allow to sent mood via email or SMS in text format
+    private void textShare(){
+        mShareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //Save chosen mood in SharedPreferences
+                SharedPrefTools.setPrefKeyMood(MainActivity.this, mDate, pager.getCurrentItem());
+
+                //Convert int mood in text
+                int intMood = SharedPrefTools.getPrefKeyMood(MainActivity.this, mDate);
+                String convertedMood = null;
+                switch (intMood){
+                    case 0:
+                        convertedMood = "I am disappointed today!";
+                        break;
+                    case 1:
+                        convertedMood = "I am sad today!";
+                        break;
+                    case 2:
+                        convertedMood = "I am normal today!";
+                        break;
+                    case 3:
+                        convertedMood = "I am happy today!";
+                        break;
+                    case 4:
+                        convertedMood = "I am super happy today!";
+                        break;
+                }
+
+                //Initialize Share Text (mood + comment) Intent
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, convertedMood + " " + SharedPrefTools.getPrefKeyCom(MainActivity.this, mDate));
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
             }
         });
     }
