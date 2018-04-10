@@ -79,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+
+                //Save chosen mood in SharedPreferences when comment button is clicked
+                SharedPrefTools.setPrefKeyMood(MainActivity.this, mDate, pager.getCurrentItem());
+
                 //Comment popup
                 AlertDialog.Builder builder;
                 builder = new AlertDialog.Builder(MainActivity.this);
