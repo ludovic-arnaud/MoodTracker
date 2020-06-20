@@ -13,7 +13,7 @@ By clicking on ADD button, you add a comment that define your mood.
 
 Share your actual mood and its comment if you add one by email or SMS by clicking on SHARE button:
 
-Your last moods are recorded for a week. Simply click on button https://github.com/ludovic-arnaud/MoodTracker/blob/master/app/src/main/res/drawable-mdpi/ic_history_black.png?raw=true to show them:
+Your last moods are recorded for a week. Simply click on button ![alt text](https://github.com/ludovic-arnaud/MoodTracker/blob/master/app/src/main/res/drawable-mdpi/ic_history_black.png?raw=true) to show them:
  
 All your comments are shown by clicking on the   button:
   
