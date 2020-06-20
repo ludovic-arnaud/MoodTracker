@@ -1,5 +1,4 @@
 # MoodTracker
-MOODTRACKER
 Capture your mood of the day
 
 Do you feel happy or sad today? If you need to record and share your mood with your friends and family, MoodTracker is the best choice for you. You can choose between five moods from disappointed to super happy and comment why you feel like that.
@@ -9,11 +8,11 @@ How does it work?
 Choose your actual mood by sliding up and down on your screen.
  
 Each time you choose a mood, it is saved until the next day. But you can change it as many time as you want in a day.
-By clicking on ADD button, you add a comment that define your mood.
+By clicking on ![alt text](https://github.com/ludovic-arnaud/MoodTracker/blob/master/app/src/main/res/drawable-mdpi/ic_note_add_black.png?raw=true) button, you add a comment that define your mood.
 
-Share your actual mood and its comment if you add one by email or SMS by clicking on SHARE button:
+Share your actual mood and its comment if you add one by email or SMS by clicking on ![alt text](https://github.com/ludovic-arnaud/MoodTracker/blob/master/app/src/main/res/drawable-mdpi/ic_share_black_48dp.png?raw=true) button.
 
-Your last moods are recorded for a week. Simply click on button ![alt text](https://github.com/ludovic-arnaud/MoodTracker/blob/master/app/src/main/res/drawable-mdpi/ic_history_black.png?raw=true) to show them:
+Your last moods are recorded for a week. Simply click on button ![alt text](https://github.com/ludovic-arnaud/MoodTracker/blob/master/app/src/main/res/drawable-mdpi/ic_history_black.png?raw=true) to show them.
  
-All your comments are shown by clicking on the   button:
+All your comments are shown by clicking on the ![alt text](https://github.com/ludovic-arnaud/MoodTracker/blob/master/app/src/main/res/drawable-mdpi/ic_comment_black_48px.png?raw=true) button.
   
